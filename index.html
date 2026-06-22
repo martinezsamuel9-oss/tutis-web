@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Tuti's Frozen Yogurt</title>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=1">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #faf9f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     try {
       if (!document.querySelector('link[rel="icon"]')) {
         var __ic = document.createElement('link');
-        __ic.rel = 'icon'; __ic.type = 'image/svg+xml'; __ic.href = 'assets/favicon.svg';
+        __ic.rel = 'icon'; __ic.type = 'image/svg+xml'; __ic.href = 'assets/favicon.svg?v=1';
         document.head.appendChild(__ic);
       }
       if (!document.title || document.title === 'Bundled Page') document.title = "Tuti's Frozen Yogurt";
