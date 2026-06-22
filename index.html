@@ -2,11 +2,12 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Bundled Page</title>
+  <title>Tuti's Frozen Yogurt</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #faf9f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
-    #__bundler_loading { position: fixed; bottom: 20px; right: 20px; font: 13px/1.4 -apple-system, BlinkMacSystemFont, sans-serif; color: #666; background: #fff; padding: 8px 14px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); z-index: 10000; }
+    #__bundler_loading { display: none; position: fixed; bottom: 20px; right: 20px; font: 13px/1.4 -apple-system, BlinkMacSystemFont, sans-serif; color: #666; background: #fff; padding: 8px 14px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); z-index: 10000; }
     #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #faf9f5; z-index: 9999; }
     #__bundler_thumbnail svg { width: 100%; height: 100%; object-fit: contain; }
     #__bundler_placeholder { color: #999; font-size: 14px; }
@@ -20,12 +21,7 @@
 </head>
 <body>
   <div id="__bundler_thumbnail">
-    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100" height="100" rx="20" fill="#ED1C8E"></rect>
-      <circle cx="50" cy="44" r="20" fill="#FFD6EA"></circle>
-      <path d="M34 60 L66 60 L57 86 Q50 92 43 86 Z" fill="#fff"></path>
-      <text x="50" y="49" font-family="Outfit,sans-serif" font-size="20" font-weight="900" fill="#ED1C8E" text-anchor="middle">T</text>
-    </svg>
+    <img src="assets/15._Logo_Tuti_s-removebg-preview.png" alt="Tuti's" style="width:min(58%,340px);height:auto;object-fit:contain">
   </div>
   <div id="__bundler_loading">Unpacking...</div>
 
@@ -142,6 +138,16 @@ document.addEventListener('DOMContentLoaded', async function() {
     // preserve ordering (React before ReactDOM before Babel before text/babel).
     const doc = new DOMParser().parseFromString(template, 'text/html');
     document.documentElement.replaceWith(doc.documentElement);
+    // Marca Tuti's: replaceWith trae el <head> del template (sin favicon ni titulo);
+    // los reaplicamos sobre el documento nuevo para que persistan tras el render.
+    try {
+      if (!document.querySelector('link[rel="icon"]')) {
+        var __ic = document.createElement('link');
+        __ic.rel = 'icon'; __ic.type = 'image/svg+xml'; __ic.href = 'assets/favicon.svg';
+        document.head.appendChild(__ic);
+      }
+      if (!document.title || document.title === 'Bundled Page') document.title = "Tuti's Frozen Yogurt";
+    } catch (_e) {}
     const dead = Array.from(document.scripts);
     for (const old of dead) {
       const s = document.createElement('script');
