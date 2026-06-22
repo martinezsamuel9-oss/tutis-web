@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:#fff}
+    @keyframes floaty{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-22px) rotate(2deg)}}
+    @keyframes floaty2{0%,100%{transform:translateY(0) rotate(3deg)}50%{transform:translateY(-16px) rotate(-3deg)}}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @keyframes pop{0%{transform:scale(.85);opacity:0}100%{transform:scale(1);opacity:1}}
+    ::selection{background:#ED1C8E;color:#fff}
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100" height="100" rx="20" fill="#ED1C8E"/>
+      <circle cx="50" cy="44" r="20" fill="#FFD6EA"/>
+      <path d="M34 60 L66 60 L57 86 Q50 92 43 86 Z" fill="#fff"/>
+      <text x="50" y="49" font-family="Outfit,sans-serif" font-size="20" font-weight="900" fill="#ED1C8E" text-anchor="middle">T</text>
+    </svg>
+  </template>
+</helmet>
+<div style="font-family:'DM Sans',sans-serif;color:#2B1622;background:#fff;overflow-x:hidden;padding-top:76px">
+
+  <!-- NAV -->
+  <header style="position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:saturate(160%) blur(12px);background:rgba(255,255,255,.82);border-bottom:1px solid #FBE3F0">
+    <nav style="max-width:1240px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="#top" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+        <img src="assets/15._Logo_Tuti_s-removebg-preview.png" alt="Tuti's" style="height:46px;width:auto;display:block">
+      </a>
+      <div style="display:flex;align-items:center;gap:30px">
+        <a href="#sabores" style="text-decoration:none;color:#5A4250;font-weight:600;font-size:15px">Sabores</a>
+        <a href="#self" style="text-decoration:none;color:#5A4250;font-weight:600;font-size:15px">Self-Serve</a>
+        <a href="#menu" style="text-decoration:none;color:#5A4250;font-weight:600;font-size:15px">Menú</a>
+        <a href="#tiendas" style="text-decoration:none;color:#5A4250;font-weight:600;font-size:15px">Tiendas</a>
+        <a href="#franquicia" style="text-decoration:none;color:#5A4250;font-weight:600;font-size:15px">Franquicia</a>
+      </div>
+      <a href="#tiendas" style="text-decoration:none;background:#ED1C8E;color:#fff;font-weight:700;font-size:15px;padding:12px 24px;border-radius:999px;box-shadow:0 8px 22px -8px rgba(237,28,142,.7);font-family:'Outfit',sans-serif">Ordená ya</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" style="position:relative;max-width:1240px;margin:0 auto;padding:32px 28px 40px;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center">
+    <div style="position:relative;z-index:2">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:#FFE9F4;color:#C30F6E;font-weight:700;font-size:13px;letter-spacing:.04em;padding:8px 16px;border-radius:999px;text-transform:uppercase">🍦 Frozen Yogurt · Honduras</div>
+      <h1 style="font-family:'Outfit',sans-serif;font-weight:900;font-size:76px;line-height:.96;letter-spacing:-.03em;margin:22px 0 0;color:#2B1622">Sírvete<br><span style="color:#ED1C8E">feliz.</span></h1>
+      <p style="font-size:19px;line-height:1.5;color:#6A5160;max-width:440px;margin:22px 0 0">Tú eliges, tú te sirves, tú lo combinas. Más de 40 sabores —incluyendo <b style="color:#2B1622">sugar free</b> y <b style="color:#2B1622">veganos</b>— con toppings sin límite. Pagás por peso. Te vas con una sonrisa.</p>
+      <div style="display:flex;gap:14px;margin-top:32px;flex-wrap:wrap">
+        <a href="#menu" style="text-decoration:none;background:#ED1C8E;color:#fff;font-weight:700;font-size:17px;padding:16px 32px;border-radius:999px;box-shadow:0 14px 30px -10px rgba(237,28,142,.65);font-family:'Outfit',sans-serif">Ver el menú</a>
+        <a href="#self" style="text-decoration:none;background:#fff;color:#2B1622;font-weight:700;font-size:17px;padding:16px 32px;border-radius:999px;border:2px solid #F3D3E3;font-family:'Outfit',sans-serif">Cómo funciona</a>
+      </div>
+      <div style="display:flex;gap:28px;margin-top:40px">
+        <div><div style="font-family:'Outfit',sans-serif;font-weight:800;font-size:30px;color:#2B1622">40+</div><div style="font-size:13px;color:#8A7480;font-weight:600">Sabores</div></div>
+        <div style="width:1px;background:#F0DAE5"></div>
+        <div><div style="font-family:'Outfit',sans-serif;font-weight:800;font-size:30px;color:#2B1622">3</div><div style="font-size:13px;color:#8A7480;font-weight:600">Tiendas</div></div>
+        <div style="width:1px;background:#F0DAE5"></div>
+        <div><div style="font-family:'Outfit',sans-serif;font-weight:800;font-size:30px;color:#2B1622">∞</div><div style="font-size:13px;color:#8A7480;font-weight:600">Combinaciones</div></div>
+      </div>
+    </div>
+    <div style="position:relative;height:520px">
+      <div style="position:absolute;inset:0;margin:auto;width:430px;height:430px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FFD6EA,#FFB9DD 55%,#FF9ACB);top:10px"></div>
+      <div style="position:absolute;width:130px;height:130px;border-radius:50%;background:#FFE07A;top:0;right:30px;opacity:.9"></div>
+      <div style="position:absolute;width:70px;height:70px;border-radius:50%;background:#8FD94F;bottom:60px;left:0;opacity:.9"></div>
+      <img src="assets/Fresa.png" alt="" style="position:absolute;width:250px;left:50%;top:50%;transform:translate(-50%,-50%);filter:drop-shadow(0 30px 40px rgba(180,20,100,.35));animation:floaty 6s ease-in-out infinite">
+      <img src="assets/Mango.png" alt="" style="position:absolute;width:140px;left:6%;top:18%;filter:drop-shadow(0 18px 26px rgba(180,20,100,.3));animation:floaty2 7s ease-in-out infinite">
+      <img src="assets/Cookies-and-Cream.png" alt="" style="position:absolute;width:150px;right:2%;bottom:8%;filter:drop-shadow(0 18px 26px rgba(180,20,100,.3));animation:floaty 7.5s ease-in-out infinite">
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div style="background:#ED1C8E;overflow:hidden;padding:16px 0;transform:rotate(-1.2deg);margin:24px 0 0;width:108%;margin-left:-4%">
+    <div style="display:flex;width:max-content;animation:marquee 24s linear infinite;gap:0">
+      <div style="display:flex;gap:44px;padding-right:44px;font-family:'Outfit',sans-serif;font-weight:800;font-size:22px;color:#fff;white-space:nowrap;align-items:center">
+        <span>SELF-SERVE</span><span style="color:#FFC7E4">✦</span><span>SUGAR FREE</span><span style="color:#FFC7E4">✦</span><span>VEGANO</span><span style="color:#FFC7E4">✦</span><span>TOPPINGS SIN LÍMITE</span><span style="color:#FFC7E4">✦</span><span>PAGÁS POR PESO</span><span style="color:#FFC7E4">✦</span>
+      </div>
+      <div style="display:flex;gap:44px;padding-right:44px;font-family:'Outfit',sans-serif;font-weight:800;font-size:22px;color:#fff;white-space:nowrap;align-items:center" aria-hidden="true">
+        <span>SELF-SERVE</span><span style="color:#FFC7E4">✦</span><span>SUGAR FREE</span><span style="color:#FFC7E4">✦</span><span>VEGANO</span><span style="color:#FFC7E4">✦</span><span>TOPPINGS SIN LÍMITE</span><span style="color:#FFC7E4">✦</span><span>PAGÁS POR PESO</span><span style="color:#FFC7E4">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SELF SERVE -->
+  <section id="self" style="max-width:1240px;margin:0 auto;padding:90px 28px 30px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center">
+    <div style="position:relative;border-radius:32px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(180,20,100,.4);aspect-ratio:4/5;background:#FFE9F4">
+      <video id="ssVideo" src="assets/Video-Self-Serve-1.mp4" poster="assets/Screenshot_22.png" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block"></video>
+      <button onClick="{{ toggleSound }}" aria-label="{{ soundLabel }}" title="{{ soundLabel }}" style="position:absolute;bottom:16px;right:16px;z-index:3;width:52px;height:52px;border-radius:50%;border:none;background:rgba(43,22,34,.55);backdrop-filter:blur(6px);color:#fff;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px -4px rgba(0,0,0,.4)">{{ soundIcon }}</button>
+    </div>
+    <div>
+      <div style="display:inline-block;background:#FFE9F4;color:#C30F6E;font-weight:700;font-size:13px;letter-spacing:.04em;padding:8px 16px;border-radius:999px;text-transform:uppercase">El experience Tuti's</div>
+      <h2 style="font-family:'Outfit',sans-serif;font-weight:900;font-size:48px;line-height:1.02;letter-spacing:-.02em;margin:18px 0 10px;color:#2B1622">Tú mandas en<br>cada cucharada</h2>
+      <p style="font-size:17px;line-height:1.55;color:#6A5160;max-width:460px">El bar self-serve es tuyo. Sin recetas, sin reglas: armá tu copa perfecta en tres pasos.</p>
+      <div style="display:flex;flex-direction:column;gap:14px;margin-top:30px">
+        <sc-for list="{{ steps }}" as="step" hint-placeholder-count="3">
+          <div style="display:flex;align-items:center;gap:18px;background:#FFF6FB;border:1px solid #FBE3F0;border-radius:18px;padding:18px 22px">
+            <div style="flex:none;width:46px;height:46px;border-radius:50%;background:#ED1C8E;color:#fff;font-family:'Outfit',sans-serif;font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center">{{ step.n }}</div>
+            <div><div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:19px;color:#2B1622">{{ step.t }}</div><div style="font-size:15px;color:#7A6270">{{ step.d }}</div></div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- SABORES -->
+  <section id="sabores" style="background:linear-gradient(180deg,#fff,#FFF6FB);padding:90px 0">
+    <div style="max-width:1240px;margin:0 auto;padding:0 28px">
+      <div style="text-align:center;max-width:640px;margin:0 auto">
+        <div style="display:inline-block;background:#FFE9F4;color:#C30F6E;font-weight:700;font-size:13px;letter-spacing:.04em;padding:8px 16px;border-radius:999px;text-transform:uppercase">Más de 40 sabores</div>
+        <h2 style="font-family:'Outfit',sans-serif;font-weight:900;font-size:52px;line-height:1.02;letter-spacing:-.02em;margin:16px 0 8px;color:#2B1622">Encontrá el tuyo</h2>
+        <p style="font-size:17px;color:#6A5160">De clásicos como Fresa y Chocolate a Red Velvet, Taro y sorbetes veganos. Rotamos sabores cada semana.</p>
+      </div>
+      <div style="display:flex;justify-content:center;gap:10px;margin:34px 0 36px;flex-wrap:wrap">
+        <button onClick="{{ setNormal }}" style="{{ tabNormal }}">Normales</button>
+        <button onClick="{{ setSF }}" style="{{ tabSF }}">Sugar Free</button>
+        <button onClick="{{ setVegan }}" style="{{ tabVegan }}">Veganos</button>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:18px">
+        <sc-for list="{{ flavors }}" as="f" hint-placeholder-count="12">
+          <div style="background:#fff;border:1px solid #F4DDE9;border-radius:20px;padding:14px 10px 16px;text-align:center;box-shadow:0 10px 26px -18px rgba(180,20,100,.5);transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-6px);box-shadow:0 22px 38px -20px rgba(180,20,100,.6);border-color:#F3B9D6">
+            <div style="width:100%;aspect-ratio:1;border-radius:14px;background:radial-gradient(circle at 50% 38%,#FFEAF4,#FFD9EC);display:flex;align-items:center;justify-content:center;overflow:hidden">
+              <img src="{{ f.img }}" alt="{{ f.name }}" style="width:84%;height:84%;object-fit:contain" loading="lazy">
+            </div>
+            <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:14px;color:#3A2530;margin-top:10px;line-height:1.2">{{ f.name }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPPINGS -->
+  <section style="max-width:1240px;margin:0 auto;padding:90px 28px">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:34px">
+      <div>
+        <div style="display:inline-block;background:#FFF0D6;color:#B8740A;font-weight:700;font-size:13px;letter-spacing:.04em;padding:8px 16px;border-radius:999px;text-transform:uppercase">Toppings sin límite</div>
+        <h2 style="font-family:'Outfit',sans-serif;font-weight:900;font-size:48px;line-height:1.02;letter-spacing:-.02em;margin:16px 0 0;color:#2B1622">Corónalo a tu manera</h2>
+      </div>
+      <p style="font-size:16px;color:#6A5160;max-width:360px">Frutas frescas, gomitas, galletas, chocolates, salsas y toppings premium. Ponés todo lo que quieras.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:18px">
+      <sc-for list="{{ toppings }}" as="t" hint-placeholder-count="10">
+        <div style="border-radius:22px;overflow:hidden;background:{{ t.bg }};aspect-ratio:1;position:relative;display:flex;align-items:flex-end;padding:16px">
+          <img src="{{ t.img }}" alt="{{ t.name }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" loading="lazy">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(43,22,34,.72))"></div>
+          <div style="position:relative;font-family:'Outfit',sans-serif;font-weight:800;font-size:17px;color:#fff">{{ t.name }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- MENU / MAS QUE FROYO -->
+  <section id="menu" style="background:#2B1622;padding:90px 0;color:#fff">
+    <div style="max-width:1240px;margin:0 auto;padding:0 28px">
+      <div style="text-align:center;max-width:620px;margin:0 auto 44px">
+        <div style="display:inline-block;background:rgba(237,28,142,.22);color:#FFA9D5;font-weight:700;font-size:13px;letter-spacing:.04em;padding:8px 16px;border-radius:999px;text-transform:uppercase">Más que froyo</div>
+        <h2 style="font-family:'Outfit',sans-serif;font-weight:900;font-size:52px;line-height:1.02;letter-spacing:-.02em;margin:16px 0 8px">El menú completo</h2>
+        <p style="font-size:17px;color:#D8C2CE">Si lo tuyo no es servirte, también lo armamos por vos.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+        <sc-for list="{{ products }}" as="p" hint-placeholder-count="4">
+          <div style="background:linear-gradient(180deg,#3A2230,#2B1622);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:26px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between" style-hover="border-color:rgba(237,28,142,.5)">
+            <div style="font-size:42px">{{ p.icon }}</div>
+            <div>
+              <div style="font-family:'Outfit',sans-serif;font-weight:800;font-size:24px">{{ p.name }}</div>
+              <div style="font-size:15px;color:#C9B2BF;margin-top:6px;line-height:1.45">{{ p.d }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIENDAS -->
+  <section id="tiendas" style="max-width:1240px;margin:0 auto;padding:90px 28px">
+    <div style="text-align:center;max-width:600px;margin:0 auto 40px">
+      <div style="display:inline-block;background:#FFE9F4;color:#C30F6E;font-weight:700;font-size:13px;letter-spacing:.04em;padding:8px 16px;border-radius:999px;text-transform:uppercase">Encontranos</div>
+      <h2 style="font-family:'Outfit',sans-serif;font-weight:900;font-size:50px;line-height:1.02;letter-spacing:-.02em;margin:16px 0 0;color:#2B1622">Tuti's cerca de vos</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+      <sc-for list="{{ stores }}" as="s" hint-placeholder-count="3">
+        <div style="border-radius:26px;overflow:hidden;border:1px solid #F4DDE9;background:#fff;box-shadow:0 18px 40px -28px rgba(180,20,100,.5)">
+          <div style="height:150px;background:{{ s.bg }};position:relative;display:flex;align-items:center;justify-content:center">
+            <div style="font-family:'Outfit',sans-serif;font-weight:900;font-size:46px;color:rgba(255,255,255,.85)">{{ s.city }}</div>
+          </div>
+          <div style="padding:22px 24px">
+            <div style="font-family:'Outfit',sans-serif;font-weight:800;font-size:21px;color:#2B1622">{{ s.name }}</div>
+            <div style="font-size:15px;color:#7A6270;margin-top:4px">{{ s.area }}</div>
+            <a href="{{ s.wa }}" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;text-decoration:none;background:#25D366;color:#fff;font-weight:700;font-size:15px;padding:11px 20px;border-radius:999px;font-family:'Outfit',sans-serif">WhatsApp</a>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- FRANQUICIA -->
+  <section id="franquicia" style="max-width:1240px;margin:0 auto;padding:0 28px 90px">
+    <div style="border-radius:34px;overflow:hidden;background:linear-gradient(120deg,#ED1C8E,#FF5FB0);padding:60px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;position:relative">
+      <div style="position:absolute;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.12);right:-60px;top:-80px"></div>
+      <div style="position:relative;color:#fff">
+        <div style="display:inline-block;background:rgba(255,255,255,.2);color:#fff;font-weight:700;font-size:13px;letter-spacing:.04em;padding:8px 16px;border-radius:999px;text-transform:uppercase">Franquicia</div>
+        <h2 style="font-family:'Outfit',sans-serif;font-weight:900;font-size:48px;line-height:1.02;letter-spacing:-.02em;margin:16px 0 14px">¿Querés tu propio Tuti's?</h2>
+        <div style="display:flex;flex-direction:column;gap:12px;max-width:430px">
+          <div style="display:flex;gap:12px;align-items:center;font-size:17px;font-weight:500"><span style="font-size:20px">✓</span> Modelo de negocio probado y exitoso</div>
+          <div style="display:flex;gap:12px;align-items:center;font-size:17px;font-weight:500"><span style="font-size:20px">✓</span> Productos únicos y de alta calidad</div>
+          <div style="display:flex;gap:12px;align-items:center;font-size:17px;font-weight:500"><span style="font-size:20px">✓</span> Asistencia técnica permanente</div>
+        </div>
+        <a href="mailto:tutis.mercadeo@gmail.com" style="display:inline-block;margin-top:30px;text-decoration:none;background:#fff;color:#ED1C8E;font-weight:800;font-size:17px;padding:16px 34px;border-radius:999px;font-family:'Outfit',sans-serif">Quiero información</a>
+      </div>
+      <div style="position:relative;display:flex;justify-content:center">
+        <img src="assets/Image-5-Home.png" alt="Franquicia Tuti's" style="width:100%;max-width:360px;border-radius:24px;box-shadow:0 30px 60px -20px rgba(120,0,60,.5);object-fit:cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- TUTISFAM / GIFT / EVENTOS -->
+  <section style="background:#FFF6FB;padding:80px 0">
+    <div style="max-width:1240px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+      <div style="background:#fff;border:1px solid #F4DDE9;border-radius:26px;padding:34px;text-align:center">
+        <div style="font-size:44px">💖</div>
+        <h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:24px;margin:14px 0 8px;color:#2B1622">#TutisFam</h3>
+        <p style="font-size:15px;color:#7A6270;line-height:1.5">Sumate a nuestro programa de lealtad y acumulá premios cada vez que venís.</p>
+        <a href="https://forms.gle/x64SDKEzY11VQbSz8" target="_blank" style="display:inline-block;margin-top:18px;text-decoration:none;color:#ED1C8E;font-weight:800;font-size:15px;font-family:'Outfit',sans-serif">Unirme →</a>
+      </div>
+      <div style="background:#fff;border:1px solid #F4DDE9;border-radius:26px;padding:34px;text-align:center">
+        <div style="font-size:44px">🎁</div>
+        <h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:24px;margin:14px 0 8px;color:#2B1622">Gift Cards</h3>
+        <p style="font-size:15px;color:#7A6270;line-height:1.5">El regalo más dulce. Regalá felicidad Tuti's en cualquier ocasión.</p>
+        <a href="mailto:tutis.mercadeo@gmail.com" style="display:inline-block;margin-top:18px;text-decoration:none;color:#ED1C8E;font-weight:800;font-size:15px;font-family:'Outfit',sans-serif">Cotizar →</a>
+      </div>
+      <div style="background:#fff;border:1px solid #F4DDE9;border-radius:26px;padding:34px;text-align:center">
+        <div style="font-size:44px">🎉</div>
+        <h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:24px;margin:14px 0 8px;color:#2B1622">Eventos</h3>
+        <p style="font-size:15px;color:#7A6270;line-height:1.5">Llevá la barra de froyo a tu cumpleaños, empresa o celebración.</p>
+        <a href="https://tutisfranquicia.com/eventos/" target="_blank" style="display:inline-block;margin-top:18px;text-decoration:none;color:#ED1C8E;font-weight:800;font-size:15px;font-family:'Outfit',sans-serif">Cotizar evento →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEÑAS -->
+  <section style="max-width:1240px;margin:0 auto;padding:90px 28px">
+    <div style="text-align:center;max-width:600px;margin:0 auto 40px">
+      <div style="font-family:'Outfit',sans-serif;color:#FFB13C;font-size:24px;letter-spacing:4px">★★★★★</div>
+      <h2 style="font-family:'Outfit',sans-serif;font-weight:900;font-size:48px;line-height:1.02;letter-spacing:-.02em;margin:8px 0 0;color:#2B1622">Lo dice la #TutisFam</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+      <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="3">
+        <div style="background:#FFF6FB;border:1px solid #F4DDE9;border-radius:24px;padding:30px">
+          <div style="color:#FFB13C;font-size:18px;letter-spacing:3px;margin-bottom:14px">★★★★★</div>
+          <p style="font-size:16px;line-height:1.55;color:#3A2530">{{ r.text }}</p>
+          <div style="font-family:'Outfit',sans-serif;font-weight:800;font-size:15px;color:#ED1C8E;margin-top:18px">— {{ r.name }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#2B1622;color:#fff;padding:64px 0 30px">
+    <div style="max-width:1240px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px">
+      <div>
+        <img src="assets/15._Logo_Tuti_s-removebg-preview.png" alt="Tuti's" style="height:54px;filter:brightness(0) invert(1);opacity:.95">
+        <p style="font-size:15px;color:#C9B2BF;margin-top:16px;max-width:320px;line-height:1.5">Bienvenidos a Tuti's. Nuestro deseo es que te vayas con una sonrisa.</p>
+        <div style="display:flex;gap:12px;margin-top:20px">
+          <a href="https://www.instagram.com/tutis.hn" target="_blank" style="text-decoration:none;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px">IG</a>
+          <a href="https://www.facebook.com/tutishn" target="_blank" style="text-decoration:none;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px">FB</a>
+          <a href="https://www.tiktok.com/@tutishn" target="_blank" style="text-decoration:none;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px">TT</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Outfit',sans-serif;font-weight:800;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:#FFA9D5;margin-bottom:16px">Tiendas</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:15px;color:#D8C2CE">
+          <a href="http://wa.me/50494360287" target="_blank" style="text-decoration:none;color:#D8C2CE">La Galería, Tegucigalpa</a>
+          <a href="http://wa.me/50494202040" target="_blank" style="text-decoration:none;color:#D8C2CE">Multiplaza, Tegucigalpa</a>
+          <a href="http://wa.me/50494202041" target="_blank" style="text-decoration:none;color:#D8C2CE">Paseo Próceres, San Pedro Sula</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Outfit',sans-serif;font-weight:800;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:#FFA9D5;margin-bottom:16px">Contacto</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:15px;color:#D8C2CE">
+          <a href="mailto:tutis.mercadeo@gmail.com" style="text-decoration:none;color:#D8C2CE">tutis.mercadeo@gmail.com</a>
+          <a href="#franquicia" style="text-decoration:none;color:#D8C2CE">Franquicias</a>
+          <a href="#menu" style="text-decoration:none;color:#D8C2CE">Menú</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1240px;margin:40px auto 0;padding:24px 28px 0;border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:#9A8590">© 2024 Tuti's Franquicia. Todos los derechos reservados.</div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { cat: 'normal', muted: true };
+
+  componentDidMount(){
+    const v = document.getElementById('ssVideo');
+    if(v){ v.muted = true; v.volume = 0.35; }
+  }
+
+  toggleSound(){
+    const v = document.getElementById('ssVideo');
+    if(!v) return;
+    const newMuted = !this.state.muted;
+    v.muted = newMuted;
+    v.volume = 0.35;
+    if(!newMuted){ v.play && v.play().catch(()=>{}); }
+    this.setState({ muted: newMuted });
+  }
+
+  base(n){ const u='assets/'; return u+n; }
+
+  data(){
+    return {
+      normal: [
+        ['Fresa','Fresa.png'],['Chocolate','Chocolate.png'],['Cookies and Cream','Cookies-and-Cream.png'],
+        ['Cookie Dough','Cookie-Dough.png'],['Nutella','Nutella.png'],['Dulce de Leche','Dulce-de-Leche.png'],
+        ['Red Velvet','Red-Velvet.png'],['Mango','Mango.png'],['Pistacho','Pistacho.png'],
+        ['Salted Caramel','Salted-Caramel.png'],['Tiramisu','Tiramisu.png'],['Birthday Cake','Birthday-Cake.png'],
+        ['Cheesecake de Fresa','Cheesecake-de-Fresa.png'],['Snickers','Snickers.png'],['Taro','Taro.png'],['Vainilla','Vainilla.png'],
+        ['Key Lime Pie','Key-Lime-Pie.png'],['Smores','Smores.png']
+      ],
+      sf: [
+        ['Fresa','Fresa-1.png'],['Blueberry','Blueberry-1.png'],['Cappuccino','Cappuccino-1.png'],
+        ['Red Velvet','Red-Velvet-1.png'],['Dulce de Leche','Dulce-de-Leche-1.png'],['Pistacho','Pistacho-1.png'],
+        ['Taro','Taro-1.png'],['Tiramisu','Tiramisu-1.png'],['Birthday Cake','Birthday-Cake-1.png'],
+        ['Black Cherry','Black-Cherry-1.png'],['Chicle','Chicle-1.png'],['Salted Caramel','Salted-Caramel-1.png']
+      ],
+      vegan: [
+        ['Sorbete de Fresa','Sorbete-de-Fresa.png'],['Sorbete de Mandarina','Sorbete-de-Mandarina.jpeg'],
+        ['Sorbete de Maracuyá','Sorbete-de-Maracuya.png'],['Sorbete de Mora','Sorbete-de-Mora.png'],
+        ['Sorbete de Naranja','Sorbete-de-Naranja.png'],['Sorbete de Sandía-Limón','Sorbete-de-Sandia-Limon.jpeg'],
+        ['Sorbete de Toronja','Sorbete-de-Toronja.png']
+      ]
+    };
+  }
+
+  tabStyle(active){
+    const b='font-family:\'Outfit\',sans-serif;font-weight:700;font-size:15px;padding:12px 26px;border-radius:999px;cursor:pointer;border:2px solid transparent;transition:all .2s;';
+    return active
+      ? b+'background:#ED1C8E;color:#fff;box-shadow:0 10px 24px -10px rgba(237,28,142,.7)'
+      : b+'background:#fff;color:#7A6270;border-color:#F3D3E3';
+  }
+
+  renderVals(){
+    const d = this.data();
+    const list = d[this.state.cat] || d.normal;
+    const flavors = list.map(([name,file]) => ({ name, img: this.base(file) }));
+    const tu = 'assets/';
+    return {
+      toggleSound: () => this.toggleSound(),
+      soundIcon: this.state.muted ? '🔇' : '🔊',
+      soundLabel: this.state.muted ? 'Activar sonido' : 'Silenciar',
+      flavors,
+      setNormal: () => this.setState({cat:'normal'}),
+      setSF: () => this.setState({cat:'sf'}),
+      setVegan: () => this.setState({cat:'vegan'}),
+      tabNormal: this.tabStyle(this.state.cat==='normal'),
+      tabSF: this.tabStyle(this.state.cat==='sf'),
+      tabVegan: this.tabStyle(this.state.cat==='vegan'),
+      steps: [
+        {n:'1', t:'Elegí tu vaso', d:'Pequeño, mediano o grande. Vos decidís el tamaño.'},
+        {n:'2', t:'Servite a gusto', d:'Combiná todos los sabores y toppings que quieras.'},
+        {n:'3', t:'Pesá y disfrutá', d:'Pagás solo por el peso. Justo y delicioso.'}
+      ],
+      toppings: [
+        {name:'Frutas', img:tu+'Frutas.png', bg:'#8FD94F'},
+        {name:'Gummies', img:tu+'Gummies.png', bg:'#6C8CEF'},
+        {name:'Galletas', img:tu+'Galletas.png', bg:'#C9893F'},
+        {name:'Chocolates', img:tu+'Chocolates.png', bg:'#6B4226'},
+        {name:'Dulces', img:tu+'Dulces.png', bg:'#ED1C8E'},
+        {name:'Salsas', img:tu+'Salsas.png', bg:'#B8740A'},
+        {name:'Jaleas', img:tu+'Jaleas.png', bg:'#9B3FB8'},
+        {name:'Nueces y Cereales', img:tu+'Nueces-y-Cereales.png', bg:'#A8772E'},
+        {name:'Especiales', img:tu+'Toppings-Especiales.png', bg:'#E0457A'},
+        {name:'Premium', img:tu+'Toppings-Premium.png', bg:'#2B1622'}
+      ],
+      products: [
+        {icon:'🥤', name:'Shakes', d:'Cremosos y cargados de sabor. Probá el de Fresa o el Oreo.'},
+        {icon:'🍨', name:'Sundaes', d:'La combinación perfecta de froyo, salsas y toppings.'},
+        {icon:'🌯', name:'Rolls', d:'Ice cream rolls hechos al momento sobre la plancha fría.'},
+        {icon:'🍭', name:'Pop Bar & Drinks', d:'Paletas artesanales y bebidas para acompañar.'}
+      ],
+      stores: [
+        {city:'TGU', name:"Tuti's La Galería", area:'Tegucigalpa', wa:'http://wa.me/50494360287', bg:'linear-gradient(135deg,#ED1C8E,#FF7FBE)'},
+        {city:'TGU', name:"Tuti's Multiplaza", area:'Mall Multiplaza, Tegucigalpa', wa:'http://wa.me/50494202040', bg:'linear-gradient(135deg,#9B6BE6,#C99CF0)'}
+      ],
+      reviews: [
+        {text:'Es una delicia refrescante, te sirves tú mismo y te cobran de acuerdo al peso. La chica que atiende muy amable. ¡Muy recomendado!', name:'Jess'},
+        {text:'Delicioso yogur helado. Tú eliges tus combinaciones y aderezos. Precios por onza.', name:'Ale Hernández'},
+        {text:'¡Deliciiiooossosss! Muy recomendado, en especial los Banana Bites y el Shake de Fresa.', name:'Claudio Alcerro'}
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
