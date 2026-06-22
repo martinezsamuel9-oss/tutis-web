@@ -9,6 +9,7 @@ node_modules/
 # Editores
 .vscode/
 .idea/
+.claude/
 
 # Archivos internos del entorno de diseño
 .thumbnail

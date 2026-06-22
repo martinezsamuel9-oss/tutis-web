@@ -37,6 +37,13 @@ document.addEventListener('DOMContentLoaded', async function() {
 
   // Error sink persists across replaceWith since it's on window, not the DOM.
   window.addEventListener('error', function(e) {
+    // Ignorar errores transitorios de holes de template sin renderizar (p.ej. <img src="{{ f.img }}">):
+    // el navegador pide la URL literal y, segun el hosting, recibe 404 o HTML (catch-all) -> evento error benigno.
+    var __t = e.target;
+    if (__t && __t !== window && __t.tagName) {
+      var __u = __t.src || __t.currentSrc || __t.href || '';
+      if (__u.indexOf('{{') !== -1 || __u.indexOf('%7B%7B') !== -1) return;
+    }
     var p = document.body || document.documentElement;
     var d = document.getElementById('__bundler_err') || p.appendChild(document.createElement('div'));
     d.id = '__bundler_err';
