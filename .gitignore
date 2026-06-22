@@ -13,3 +13,7 @@ node_modules/
 # Archivos internos del entorno de diseño
 .thumbnail
 scraps/
+uploads/
+/Canvas.dc.html
+/Tutis Home - Opcion A.dc.html
+/support.js
